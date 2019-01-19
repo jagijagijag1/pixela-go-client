@@ -87,7 +87,7 @@ func (c Client) GetPixelQuantity(id, date string) (float64, error) {
 	}
 
 	type ResponseBody struct {
-		Quantity float64
+		Quantity float64 `json:",string"`
 	}
 	body := ResponseBody{}
 	err = json.Unmarshal(bodyJSON, &body)
